@@ -19,7 +19,7 @@ jobs:
           java-version: '21'
 
       - name: Build WAR
-        run: jar cvf helloworld.war WEB-INF
+        run: jar cvf helloworld.war WEB-INF configuration.yaml
 
       - name: Display WAR file
         run: ls helloworld.war
