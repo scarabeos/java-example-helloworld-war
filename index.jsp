@@ -38,7 +38,7 @@
 
 <%
     // Specify the file path
-    String filePath = "configuration.yaml";
+    String filePath = "webapps/helloworld/configuration.yaml";
     // FileReader and BufferedReader objects for reading the file
     BufferedReader reader = null;
 
