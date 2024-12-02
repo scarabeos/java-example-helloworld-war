@@ -2,7 +2,8 @@
 <%@ page import="java.io.BufferedReader" %>
 <%@ page import="java.io.IOException" %>
 <%@ page import="java.io.File" %>
-
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 
 <!doctype html>
 <html>
@@ -11,14 +12,24 @@
 		<%!
 			String title = "Hello World";
 		%>
+		<style>
+            pre {
+                font-size: 20px;
+                line-height: 1.5;
+            }
+        </style>
 	</head>
 	<body>
 		<h2><%= title %></h2>
 		<p>
 			If you see this, the example war-file was correctly deployed! Congrats!
 		</p>
-		<p>
-			<%= new java.util.Date() %>
+		<p>Date:
+			<%
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd HHmm");
+                String formattedDate = formatter.format(new Date());
+                out.println(formattedDate);
+            %>
 		</p>
 		<p>
 			You are from <%= request.getRemoteAddr() %>
